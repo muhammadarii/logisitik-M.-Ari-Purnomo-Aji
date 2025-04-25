@@ -17,8 +17,11 @@ export const Navbar = () => {
 
   return (
     <nav className="flex items-center justify-between py-4 text-white">
-      <Link href="/" className="text-lg font-semibold">
-        Logistik-M. Ari Purnomo Aji
+      <Link
+        href="/"
+        className="text-2xl font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent tracking-widest animate-pulse"
+      >
+        LOGIX
       </Link>
       <ul className="space-x-6 hidden lg:flex">
         {MenuItem.map((item) => {
@@ -29,8 +32,8 @@ export const Navbar = () => {
               href={item.path}
               className={`font-extralight transition-colors duration-300 border-b-2 ${
                 isActive
-                  ? "text-yellow-600 border-yellow-600"
-                  : "border-transparent hover:text-yellow-600 hover:border-yellow-600"
+                  ? "text-red-500 border-red-500"
+                  : "border-transparent hover:text-red-500 hover:border-red-500"
               }`}
             >
               {item.name}

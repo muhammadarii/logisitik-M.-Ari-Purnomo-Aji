@@ -32,8 +32,8 @@ export const ResponsiveStyle: React.FC<MenuMobileProps> = ({
               onClick={() => setMenuOpen(false)}
               className={`font-extralight transition-colors duration-300 ${
                 isActive
-                  ? "text-yellow-600"
-                  : "border-transparent hover:text-yellow-600"
+                  ? "text-red-500"
+                  : "border-transparent hover:text-red-500"
               }`}
             >
               {item.name}
