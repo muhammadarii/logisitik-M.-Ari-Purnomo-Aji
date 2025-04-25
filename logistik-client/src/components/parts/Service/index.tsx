@@ -54,7 +54,12 @@ export const Service: React.FC<ServiceProps> = ({
           </div>
         </div>
       </div>
-      <Image src={image} alt="Image" className="w-full h-full mt-4 lg:mt-0" />
+      <Image
+        src={image}
+        priority
+        alt="Image"
+        className="w-full h-full pt-10 lg:mt-0"
+      />
     </div>
   );
 };

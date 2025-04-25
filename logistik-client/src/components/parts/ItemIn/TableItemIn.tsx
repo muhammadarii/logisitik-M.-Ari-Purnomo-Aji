@@ -46,7 +46,9 @@ export const TableItemIn = () => {
                 <td className="p-3">{index + 1}</td>
                 <td className="p-3">{barang.barang.nama}</td>
                 <td className="p-3">{barang.barang.kode}</td>
-                <td className="p-3">{barang.jumlah}</td>
+                <td className="p-3">
+                  {barang.jumlah} {barang.barang.satuan}
+                </td>
                 <td className="p-3">{barang.asal_barang}</td>
                 <td className="p-3">{barang.tanggal_masuk}</td>
               </tr>

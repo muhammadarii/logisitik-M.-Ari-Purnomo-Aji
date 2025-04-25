@@ -46,6 +46,7 @@ export const Hero: React.FC<HeroProps> = ({
       <Image
         src={image}
         alt="Banner"
+        priority
         className="object-cover w-full h-full rounded-[20px]"
       />
     </div>
