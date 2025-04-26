@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useCreateItem } from "@/hooks/useItem";
 import { useItemStore } from "@/store/useItemStore";
-import { InputField } from "./InputField";
+import { InputField } from "../InputField";
 
 export const CreateFormItem = () => {
   const { setSelectedItem } = useItemStore();

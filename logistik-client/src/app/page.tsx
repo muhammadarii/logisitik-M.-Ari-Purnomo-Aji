@@ -3,6 +3,7 @@ import LogixTruck from "@/assets/images/LogixTruck.png";
 import { Hero } from "@/components/parts/Hero";
 import { Service } from "@/components/parts/Service";
 import { Solution } from "@/components/parts/Solution";
+import { Data } from "@/components/parts/Solution/data";
 
 const HomePage = () => {
   return (
@@ -25,7 +26,7 @@ const HomePage = () => {
               pertumbuhan bisnis."
         image={LogixTruck}
       />
-      <Solution />
+      <Solution title="OUR FREIGHT SOLUTION" data={Data} />
     </div>
   );
 };

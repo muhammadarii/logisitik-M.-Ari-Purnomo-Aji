@@ -1,23 +1,23 @@
-import { useItemInStore } from "@/store/useItemInStore";
+import { useItemOutStore } from "@/store/useItemOutStore";
 import { InputField } from "../InputField";
-import { useState } from "react";
-import { useCreateItemIn } from "@/hooks/useItemIn";
-import { SelectField } from "../SelectField";
 import { useItems } from "@/hooks/useItem";
+import { useState } from "react";
+import { useCreateItemOut } from "@/hooks/useItemOut";
+import { SelectField } from "../SelectField";
 
-export const CreateFormItemIn = () => {
-  const { setSelectedItemIn } = useItemInStore();
+export const CreateFormItemOut = () => {
+  const { setSelectedItemOut } = useItemOutStore();
   const { data: items } = useItems();
 
   const [formData, setFormData] = useState({
     barang_id: "",
     jumlah: "",
-    asal_barang: "",
-    tanggal_masuk: "",
+    tujuan_barang: "",
+    tanggal_keluar: "",
   });
 
   const [loading, setLoading] = useState(false);
-  const { mutate: createItemIn } = useCreateItemIn();
+  const { mutate: createItemOut } = useCreateItemOut();
 
   const handleChange =
     (field: string) =>
@@ -29,10 +29,10 @@ export const CreateFormItemIn = () => {
     setFormData({
       barang_id: "",
       jumlah: "",
-      asal_barang: "",
-      tanggal_masuk: "",
+      tujuan_barang: "",
+      tanggal_keluar: "",
     });
-    setSelectedItemIn(null);
+    setSelectedItemOut(null);
   };
 
   const isFormValid = () => {
@@ -52,11 +52,11 @@ export const CreateFormItemIn = () => {
     const payload = {
       barang_id: parseInt(formData.barang_id),
       jumlah: parseInt(formData.jumlah),
-      asal_barang: formData.asal_barang,
-      tanggal_masuk: formData.tanggal_masuk,
+      tujuan_barang: formData.tujuan_barang,
+      tanggal_keluar: formData.tanggal_keluar,
     };
 
-    createItemIn(payload, {
+    createItemOut(payload, {
       onSuccess: resetForm,
       onSettled: () => setLoading(false),
     });
@@ -85,14 +85,14 @@ export const CreateFormItemIn = () => {
         type="number"
       />
       <InputField
-        label="Asal Barang"
-        value={formData.asal_barang}
-        onChange={handleChange("asal_barang")}
+        label="Tujuan Barang"
+        value={formData.tujuan_barang}
+        onChange={handleChange("tujuan_barang")}
       />
       <InputField
-        label="Tanggal Masuk"
-        value={formData.tanggal_masuk}
-        onChange={handleChange("tanggal_masuk")}
+        label="Tanggal Keluar"
+        value={formData.tanggal_keluar}
+        onChange={handleChange("tanggal_keluar")}
         type="date"
       />
       <button

@@ -1,60 +1,57 @@
+"use client";
 import Image from "next/image";
-import CargoPlane from "@/assets/images/CargoPlane.jpg";
-import SeaCargo from "@/assets/images/SeaCargo.jpg";
-import RailCargo from "@/assets/images/RailCargo.jpg";
-import RoadCargo from "@/assets/images/RoadCargo.jpg";
+import { motion, useAnimation, useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
+import {
+  containerVariantsY,
+  fadeContainerVariants,
+} from "../Animation/Animation";
+import { SolutionProps } from "@/types/types";
 
-const Data = [
-  {
-    id: 1,
-    image: CargoPlane,
-    title: "Air Freight",
-    description:
-      "Fast, reliable shipping for high-priority items accross the globe.",
-  },
-  {
-    id: 2,
-    image: SeaCargo,
-    title: "Sea Freight",
-    description:
-      "Cost-effective solutions for bulk goods, with extensive port-to-port coverage.",
-  },
-  {
-    id: 3,
-    image: RailCargo,
-    title: "Rail Freight",
-    description:
-      "Economical and friendly environmental, ideal for large volumes and long distances.",
-  },
-  {
-    id: 4,
-    image: RoadCargo,
-    title: "Road Freight",
-    description:
-      "Efficient transportation for regional shipments with flexible schedules.",
-  },
-];
+export const Solution: React.FC<SolutionProps> = ({ title, data }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "0px 0px -100px 0px" });
+  const controls = useAnimation();
 
-export const Solution = () => {
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    }
+  }, [isInView, controls]);
+
   return (
-    <div className="flex flex-col items-center justify-center mt-10">
-      <div className="flex flex-row items-center gap-4 ">
-        <div className="bg-red-500 w-3 h-3 rounded-full" />
-        <p className="text-[14px] font-light bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent tracking-widest">
-          OUR FREIGHT SOLUTION
-        </p>
-      </div>
-      <h1 className="lg:text-[32px] font-light mt-2 text-center lg:w-[600px]">
-        <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-          Expertly Managing
-        </span>{" "}
-        Every Step From Transit {""}
-        <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-          to Warehouseing
-        </span>
-      </h1>
-      <div className="flex flex-col lg:grid lg:grid-cols-2 gap-10 mt-10">
-        {Data.map((item) => (
+    <div className="flex flex-col mt-10">
+      <motion.div
+        ref={ref}
+        initial="hidden"
+        animate={controls}
+        variants={containerVariantsY}
+        className="flex flex-col items-center"
+      >
+        <div className="flex flex-row items-center gap-4 ">
+          <div className="bg-red-500 w-3 h-3 rounded-full" />
+          <p className="text-[14px] font-light bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent tracking-widest">
+            {title}
+          </p>
+        </div>
+        <h1 className="lg:text-[32px] font-light mt-2 text-center lg:w-[600px]">
+          <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            Expertly Managing
+          </span>{" "}
+          Every Step From Transit {""}
+          <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            to Warehouseing
+          </span>
+        </h1>
+      </motion.div>
+      <motion.div
+        ref={ref}
+        initial="hidden"
+        animate={controls}
+        variants={fadeContainerVariants}
+        className="flex flex-col lg:grid lg:grid-cols-2 gap-10 mt-10"
+      >
+        {data.map((item) => (
           <div
             key={item.id}
             className="relative w-screen h-[300px] lg:w-[400px] lg:h-[300px] px-4 lg:px-0"
@@ -76,7 +73,7 @@ export const Solution = () => {
             </div>
           </div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };
