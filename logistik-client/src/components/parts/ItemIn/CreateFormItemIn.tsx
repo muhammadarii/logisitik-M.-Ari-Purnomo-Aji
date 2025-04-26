@@ -65,7 +65,7 @@ export const CreateFormItemIn = () => {
   return (
     <form
       onSubmit={onSubmit}
-      className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 space-y-4 border rounded-2xl w-[700px] px-10 py-20 h-auto shadow backdrop-blur-md bg-white/40"
+      className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 space-y-4 border rounded-2xl w-screen lg:w-[700px] px-10 py-20 h-auto shadow backdrop-blur-md bg-white/40"
     >
       <SelectField
         label="Barang"

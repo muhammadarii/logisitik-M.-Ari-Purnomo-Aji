@@ -17,7 +17,7 @@ export const TableItem = () => {
       <button
         onClick={toggleForm}
         type="submit"
-        className="self-end bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded cursor-pointer"
+        className="self-end bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded cursor-pointer z-10"
       >
         {formOpen ? "Close" : "Create"}
       </button>

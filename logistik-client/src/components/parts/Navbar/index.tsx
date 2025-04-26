@@ -23,7 +23,7 @@ export const Navbar = () => {
       >
         LOGIX
       </Link>
-      <ul className="space-x-6 hidden lg:flex">
+      <ul className="space-x-6 hidden md:flex">
         {MenuItem.map((item) => {
           const isActive = pathname === item.path;
           return (
