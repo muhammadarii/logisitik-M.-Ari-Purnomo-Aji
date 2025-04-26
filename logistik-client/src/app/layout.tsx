@@ -23,10 +23,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} antialiased px-2 lg:px-20`}>
+      <body className={`${poppins.variable} antialiased`}>
         <LayoutStore>
           <Navbar />
-          {children}
+          <div className="mt-[70px]">{children}</div>
         </LayoutStore>
       </body>
     </html>

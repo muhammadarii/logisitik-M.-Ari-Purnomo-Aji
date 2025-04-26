@@ -49,7 +49,7 @@ export const Solution: React.FC<SolutionProps> = ({ title, data }) => {
         initial="hidden"
         animate={controls}
         variants={fadeContainerVariants}
-        className="flex flex-col lg:grid lg:grid-cols-2 gap-10 mt-10"
+        className="flex flex-col items-center lg:grid lg:grid-cols-2 gap-10 mt-10"
       >
         {data.map((item) => (
           <div

@@ -3,7 +3,7 @@ import React from "react";
 
 const ItemPage = () => {
   return (
-    <div>
+    <div className="px-4 lg:px-20">
       <ItemPageSection />
     </div>
   );
