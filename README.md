@@ -7,3 +7,6 @@ Untuk informasi:
 
 - logistik-client (frontend)
 - logistik-service (backend)
+
+berikut merupakan tampilan landingpage untuk bagian frontend:
+![landingpage](https://github.com/user-attachments/assets/bef0f6fd-0c0e-4778-b9c7-68fa51159a24)
